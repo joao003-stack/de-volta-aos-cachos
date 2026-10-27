@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De Volta Aos Cachos | Salão especializado em cabelos cacheados e crespos</title>
+  <meta name="description" content="Atendimento com hora marcada para cabelos cacheados e crespos em Campo Mourão - PR. Agende pelo WhatsApp.">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind via CDN (sem build, funciona direto no GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { menta: '#d4f0e8', rosa: '#f7cbd1', ouro: '#d4af37', tinta: '#2d2d2d', creme: '#fdfaf6' },
+        fontFamily: { titulo: ['"Playfair Display"', 'serif'], corpo: ['Montserrat', 'sans-serif'] }
+      } }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body { background: #fdfaf6; color: #2d2d2d; font-family: 'Montserrat', sans-serif; line-height: 1.65; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #d4af37; outline-offset: 3px; }
+
+    /* Botão principal rosa */
+    .btn-rosa { background: #f7cbd1; color: #2d2d2d; font-weight: 600; border-radius: 999px;
+      border: 1.5px solid #d4af37; transition: background .2s, transform .2s; }
+    .btn-rosa:hover { background: #f3b6be; transform: translateY(-1px); }
+
+    /* Placeholder de foto: troque por <img> quando tiver as fotos reais */
+    .foto-ph { background: #f1efec; border: 2px dashed #c9c4bd; border-radius: 1.5rem; color: #9b948b;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem;
+      font-size: .8rem; text-align: center; padding: 1rem; }
+
+    /* Detalhe dourado sob os títulos */
+    .fio-ouro::after { content: ""; display: block; width: 56px; height: 3px; background: #d4af37;
+      border-radius: 3px; margin-top: .75rem; }
+    .centro.fio-ouro::after { margin-inline: auto; }
+
+    /* Botão flutuante com pulso discreto (desligado se a pessoa prefere menos movimento) */
+    .flutuante { box-shadow: 0 8px 24px rgba(37, 211, 102, .35); animation: pulso 2.6s ease-out infinite; }
+    @keyframes pulso { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,.5); } 70%,100% { box-shadow: 0 0 0 18px rgba(37,211,102,0); } }
+    @media (prefers-reduced-motion: reduce) { .flutuante { animation: none; } html { scroll-behavior: auto; } }
+  </style>
+</head>
+
+<body>
+
+<!-- ============ CABEÇALHO FIXO ============ -->
+<header class="fixed top-0 inset-x-0 z-40 bg-creme/95 backdrop-blur border-b border-menta">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="#topo" class="flex items-center gap-3" aria-label="De Volta Aos Cachos - início">
+      <!-- LOGO: troque por <img src="assets/images/logo.png" alt="Logo De Volta Aos Cachos" class="h-11 w-11 rounded-full object-cover"> -->
+      <span class="h-11 w-11 rounded-full bg-menta border border-ouro flex items-center justify-center" aria-hidden="true">
+        <svg viewBox="0 0 48 48" class="h-8 w-8">
+          <path d="M12 16l5 5 7-10 7 10 5-5-3 12H15z" fill="#d4af37"/>
+          <path d="M24 32c-6 0-9 4-9 9h18c0-5-3-9-9-9z" fill="#2d2d2d"/>
+          <circle cx="24" cy="30" r="0" />
+        </svg>
+      </span>
+      <span class="font-titulo font-bold text-lg leading-none" data-bind="nome-salao">De Volta Aos Cachos</span>
+    </a>
+    <button type="button" data-whatsapp-geral class="btn-rosa text-sm px-4 py-2 flex items-center gap-2">
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2z"/></svg>
+      WhatsApp
+    </button>
+  </div>
+</header>
+
+<main id="topo" class="pt-16">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-menta" aria-hidden="true"></div>
+    <div class="absolute bottom-0 -left-20 h-56 w-56 rounded-full bg-rosa/50" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold" data-bind="hero-titulo">Seus cachos de volta ao trono.</h1>
+        <p class="mt-6 text-base md:text-lg max-w-md" data-bind="hero-subtitulo">
+          Cuidado especializado para cabelos cacheados e crespos. Atendimento somente com hora marcada, para você ser atendida sem pressa.
+        </p>
+        <button type="button" data-whatsapp-geral class="btn-rosa mt-8 px-8 py-4 text-base shadow-md">Agendar pelo WhatsApp</button>
+      </div>
+      <!-- <img src="assets/images/hero.jpg" alt="Cliente com cachos definidos" class="rounded-3xl w-full h-full object-cover"> -->
+      <div class="foto-ph aspect-[4/5] max-h-[460px] w-full">
+        <svg class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h3l2-3h8l2 3h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg>
+        Foto principal<br>(assets/images/hero.jpg)
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE NÓS ============ -->
+  <section id="sobre" class="bg-menta/50">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <!-- <img src="assets/images/profissional.jpg" alt="Profissional do salão" class="rounded-3xl w-full object-cover"> -->
+      <div class="foto-ph aspect-square w-full max-w-md mx-auto md:order-1 order-2">
+        <svg class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h3l2-3h8l2 3h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg>
+        Foto da profissional<br>(assets/images/profissional.jpg)
+      </div>
+      <div class="md:order-2 order-1">
+        <h2 class="text-3xl md:text-4xl font-bold fio-ouro" data-bind="sobre-titulo">Respeito não é opcional, é princípio</h2>
+        <p class="mt-6 max-w-lg" data-bind="sobre-texto">
+          O De Volta aos Cachos preza pelo respeito, pela diversidade e pela valorização da identidade natural de cada pessoa. Não toleramos atitudes racistas, preconceituosas ou discriminatórias. Aqui celebramos a beleza real, a autoestima e o respeito.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section id="servicos" class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+    <h2 class="text-3xl md:text-4xl font-bold text-center fio-ouro centro">Nossos Serviços</h2>
+    <!-- Cards gerados pelo JavaScript a partir da lista SERVICOS (veja o final do arquivo) -->
+    <div id="lista-servicos" class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </section>
+
+  <!-- ============ HORÁRIOS E LOCALIZAÇÃO ============ -->
+  <section id="local" class="bg-menta/50">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+      <h2 class="text-3xl md:text-4xl font-bold text-center fio-ouro centro">Horários e Localização</h2>
+      <div class="mt-12 grid md:grid-cols-2 gap-8 items-start">
+        <div class="bg-white rounded-3xl p-6 md:p-8 border border-menta">
+          <table class="w-full text-left" id="tabela-horarios">
+            <caption class="sr-only">Horário de funcionamento</caption>
+            <thead>
+              <tr class="border-b border-ouro/60"><th class="py-2 font-semibold">Dia</th><th class="py-2 font-semibold">Atendimento</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="py-3 pr-3" data-bind="horario-dias">Segunda a Sábado</td><td class="py-3" data-bind="horario-obs">Somente com hora marcada</td></tr>
+              <tr class="border-t border-menta"><td class="py-3 pr-3">Domingo</td><td class="py-3">Fechado</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-6 flex gap-3">
+            <svg class="h-6 w-6 shrink-0 text-ouro" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+            <span data-bind="endereco">Rua Araruna, 1352 - Jardim Copacabana, Campo Mourão - PR<br><span class="text-sm opacity-75">Em frente ao Colégio Sigma</span></span>
+          </p>
+        </div>
+        <div class="rounded-3xl overflow-hidden border border-menta bg-white h-80 md:h-full min-h-[320px]">
+          <iframe title="Mapa com a localização do salão" class="w-full h-full border-0" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Rua+Araruna,+1352,+Jardim+Copacabana,+Campo+Mour%C3%A3o+-+PR&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="bg-tinta text-white">
+  <div class="max-w-6xl mx-auto px-4 py-10 text-center">
+    <p class="font-titulo text-xl">De Volta Aos Cachos</p>
+    <p class="mt-2 text-sm opacity-80 max-w-md mx-auto">Beleza real, autoestima e respeito em cada atendimento.</p>
+    <a href="https://instagram.com/devoltaaoscachosofficial" target="_blank" rel="noopener"
+       class="inline-block mt-5 text-ouro font-medium underline underline-offset-4">@devoltaaoscachosofficial</a>
+    <p class="mt-6 text-xs opacity-60">&copy; <span id="ano"></span> De Volta Aos Cachos. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- ============ BOTÃO FLUTUANTE ============ -->
+<button type="button" data-whatsapp-geral aria-label="Falar pelo WhatsApp"
+  class="flutuante fixed bottom-5 right-5 z-50 h-16 w-16 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-105 transition-transform">
+  <svg class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2z"/></svg>
+</button>
+
+<script>
+/* ==========================================================================
+   DADOS DINÂMICOS (MOCK)
+   Tudo que o painel administrativo vai editar fica neste bloco.
+   Futuramente, substitua por uma consulta ao Supabase, por exemplo:
+     const { data } = await supabase.from('servicos').select('*').eq('ativo', true);
+   ========================================================================== */
+const CONFIG = {
+  whatsapp: '44999999999',            // somente números, com DDD (o código do país 55 é adicionado abaixo)
+  mensagemGeral: 'Olá! Vim pelo site e gostaria de mais informações sobre agendamentos.'
+};
+
+const SERVICOS = [
+  // imagem: caminho da foto real (ex.: 'assets/images/corte.jpg'). Deixe '' para mostrar o placeholder.
+  { id: 1, nome: 'Avaliação Capilar de Alta Precisão', descricao: 'Análise completa de fios e couro cabeludo para definir o cuidado ideal para você.', duracao: '45 min', preco: 80,  imagem: '' /* assets/images/avaliacao.jpg */ },
+  { id: 2, nome: 'Corte para Cabelos Cacheados/Crespos', descricao: 'Corte feito fio a fio, com o cabelo seco, respeitando o desenho natural dos seus cachos.', duracao: '1h30', preco: 150, imagem: '' /* assets/images/corte.jpg */ },
+  { id: 3, nome: 'Transição Capilar / Big Chop', descricao: 'Acompanhamento da transição ou corte da química, com técnica e acolhimento.', duracao: '2h', preco: 220, imagem: '' /* assets/images/transicao.jpg */ },
+  { id: 4, nome: 'Tratamento de Hidratação Profunda', descricao: 'Reposição de água e nutrientes para devolver maciez, brilho e elasticidade.', duracao: '1h30', preco: 130, imagem: '' /* assets/images/hidratacao.jpg */ },
+  { id: 5, nome: 'Cronograma Capilar', descricao: 'Plano personalizado de hidratação, nutrição e reconstrução para os próximos meses.', duracao: '1h', preco: 110, imagem: '' /* assets/images/cronograma.jpg */ },
+  { id: 6, nome: 'Finalização e Modelagem de Cachos', descricao: 'Definição com técnicas e produtos certos para cachos marcados e com volume.', duracao: '1h15', preco: 100, imagem: '' /* assets/images/finalizacao.jpg */ }
+];
+
+/* ==========================================================================
+   LÓGICA
+   ========================================================================== */
+
+// Formata valores em reais (ex.: 150 -> "R$ 150,00")
+const formatarPreco = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+// Abre o WhatsApp (wa.me) com a mensagem já preenchida
+function abrirWhatsApp(mensagem) {
+  const url = `https://wa.me/55${CONFIG.whatsapp}?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, '_blank', 'noopener');
+}
+
+// Mensagem específica de cada serviço
+function mensagemServico(s) {
+  return `Olá! Vi o site e gostaria de agendar o serviço de ${s.nome} (Valor: ${formatarPreco(s.preco)}). Quais horários vocês têm disponíveis?`;
+}
+
+// Monta a área da foto: <img> se existir caminho, senão o placeholder
+function htmlImagem(s) {
+  if (s.imagem) return `<img src="${s.imagem}" alt="${s.nome}" class="w-full h-44 object-cover rounded-2xl" loading="lazy">`;
+  return `<div class="foto-ph h-44 w-full">
+    <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h3l2-3h8l2 3h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg>
+    Foto do serviço</div>`;
+}
+
+// Renderiza os cards de serviços
+function renderizarServicos() {
+  const grade = document.getElementById('lista-servicos');
+  grade.innerHTML = SERVICOS.map((s) => `
+    <article class="bg-white rounded-3xl p-5 border border-menta flex flex-col">
+      ${htmlImagem(s)}
+      <h3 class="mt-5 text-xl font-bold">${s.nome}</h3>
+      <p class="mt-2 text-sm flex-1">${s.descricao}</p>
+      <div class="mt-4 flex items-center justify-between border-t border-ouro/50 pt-4">
+        <span class="text-sm flex items-center gap-1.5">
+          <svg class="h-4 w-4 text-ouro" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          ${s.duracao}
+        </span>
+        <span class="font-titulo text-xl font-bold">${formatarPreco(s.preco)}</span>
+      </div>
+      <button type="button" data-servico="${s.id}" class="btn-rosa mt-4 w-full py-3 text-sm">Agendar pelo WhatsApp</button>
+    </article>`).join('');
+
+  // Um único listener para todos os botões de serviço
+  grade.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-servico]');
+    if (!btn) return;
+    const servico = SERVICOS.find((s) => s.id === Number(btn.dataset.servico));
+    if (servico) abrirWhatsApp(mensagemServico(servico));
+  });
+}
+
+// Botões com mensagem genérica (topo, hero e flutuante)
+document.querySelectorAll('[data-whatsapp-geral]').forEach((el) =>
+  el.addEventListener('click', () => abrirWhatsApp(CONFIG.mensagemGeral))
+);
+
+renderizarServicos();
+document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
